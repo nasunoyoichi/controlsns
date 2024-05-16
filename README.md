@@ -71,6 +71,10 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 DockerDesktop を開いておいてください
 
+`mkdir ./docker/nginx/logs`
+
+`mkdir ./docker/mysql`
+
 `docker compose up -d --build`
 
 `docker compose exec l10dev-app bash`
