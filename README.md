@@ -67,9 +67,11 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 # 最初にやってほしいこと
 
+## env ファイルを渡すのでクローンしたら教えたください。
+
 ## vscode のターミナル PowerShell などで 任意の保存場所/controlsns ディレクトリに入り、以下のコマンドを実行してください。
 
-DockerDesktop を開いておいてください
+### DockerDesktop を開いておいてください
 
 `mkdir ./docker/nginx/logs`
 
@@ -80,3 +82,7 @@ DockerDesktop を開いておいてください
 `docker compose exec l10dev-app bash`
 
 `npm run dev`
+
+## 下記の URL にアクセスしたら Laravel の画面が出てくると思います。
+
+http://localhost:8080
