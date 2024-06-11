@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id('post_id');
             $table->integer('user_id');
             $table->string('content');
+            $table->timestamp('created_at')->useCurrent();
         });
     }
 

@@ -10,7 +10,8 @@ class PostController extends Controller
     //postsテーブルのデータを全て取得
     public function getPosts()
     {
-        $posts = Post::all();
+        //最新のものを20件取得
+        $posts = Post::latest()->take(20)->get();
         return response()->json($posts);
     }
 }
