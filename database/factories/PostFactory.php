@@ -31,6 +31,7 @@ class PostFactory extends Factory
             'post_id' => $this->faker->randomNumber(),
             'user_id' => $this->faker->randomNumber(),
             'content' => $this->faker->text(maxNbChars: 255),
+            'created_at' => $this->faker->dateTime(),
         ];
     }
 }
