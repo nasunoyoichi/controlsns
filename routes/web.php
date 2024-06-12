@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
+use Illuminate\Http\Request;
+use App\Models\Post;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +19,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/discover', function () {
+    return view('Discover');
+});
+
+Route::get('/discover-data', function () {
+    $posts = Post::all(); 
+    return response()->json($posts);
+});
+
