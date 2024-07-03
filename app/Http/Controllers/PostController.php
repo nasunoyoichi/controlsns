@@ -58,4 +58,16 @@ class PostController extends Controller
 
         return response()->json($post);
     }
+
+    //投稿の削除
+    public function destroy(Post $post)
+    {
+        if ($post->user_id !== Auth::id()) {
+            return response()->json(['error' => 'Unauthorized'], 403);
+        }
+
+        $post->delete();
+
+        return response()->json(['message' => 'Post deleted successfully']);
+    }
 }

@@ -29,7 +29,8 @@ Route::middleware('auth:sanctum')->group(function(){
     Route::get('/posts/{post}', [PostController::class, 'show']);
     //投稿の編集
     Route::put('/posts/{post}', [PostController::class, 'update']);
-    
+    //投稿の削除
+    Route::delete('/posts/{post}', [PostController::class, 'destroy']);
 });
 
 //全ての投稿を取得(テスト用)
