@@ -40,4 +40,22 @@ class PostController extends Controller
     {
         return response()->json($post);
     }
+
+    //投稿の編集
+    public function update(Request $request, Post $post)
+    {
+        $request->validate([
+            'content' => 'required|string|max:255',
+        ]);
+
+        if ($post->user_id !== Auth::id()) {
+            return response()->json(['error' => 'Unauthorized'], 403);
+        }
+
+        $post->update([
+            'content' => $request->content,
+        ]);
+
+        return response()->json($post);
+    }
 }

@@ -27,6 +27,8 @@ Route::middleware('auth:sanctum')->group(function(){
     Route::post('/posts', [PostController::class, 'store']);
     //投稿の詳細情報を取得
     Route::get('/posts/{post}', [PostController::class, 'show']);
+    //投稿の編集
+    Route::put('/posts/{post}', [PostController::class, 'update']);
     
 });
 
