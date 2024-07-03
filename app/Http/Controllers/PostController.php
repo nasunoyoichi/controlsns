@@ -7,11 +7,12 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    //postsテーブルのデータを全て取得
-    public function getPosts()
+    //全ての投稿を取得
+    public function index()
     {
-        //最新のものを20件取得
-        $posts = Post::latest()->take(20)->get();
-        return response()->json($posts);
+        $posts = Post::with('user')         //Post::with('user')でリレーション先のuserテーブルの情報も取得
+        ->orderBy('created_at', 'desc')     //作成日で降順に並び替え
+        ->get();                            //クエリの実行
+        return response()->json($posts);    //取得したデータをJSON形式で返す
     }
 }

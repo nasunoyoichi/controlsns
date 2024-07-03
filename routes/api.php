@@ -20,6 +20,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/hello',[HelloController::class, 'index']);
+Route::middleware('auth:sanctum')->group(function(){
+    //全ての投稿を取得(本番用)
+    // Route::get('/posts', [PostController::class, 'index']);
+    
+});
 
-Route::get('/get/posts', [PostController::class, 'getPosts']);
+//全ての投稿を取得(テスト用)
+Route::get('/posts', [PostController::class, 'index']);
