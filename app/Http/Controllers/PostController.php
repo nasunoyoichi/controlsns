@@ -34,4 +34,10 @@ class PostController extends Controller
         //作成した投稿をJSON形式で返し、HTTPステータスコード201(created)を返す
         return response()->json($post, 201);
     }
+
+    //投稿の詳細情報を取得
+    public function show(Post $post)
+    {
+        return response()->json($post);
+    }
 }
