@@ -22,7 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::middleware('auth:sanctum')->group(function(){
     //全ての投稿を取得(本番用)
-    // Route::get('/posts', [PostController::class, 'index']);
+    Route::get('/posts', [PostController::class, 'index']);
     //投稿を作成
     Route::post('/posts', [PostController::class, 'store']);
     //投稿の詳細情報を取得
@@ -34,4 +34,4 @@ Route::middleware('auth:sanctum')->group(function(){
 });
 
 //全ての投稿を取得(テスト用)
-Route::get('/posts', [PostController::class, 'index']);
+// Route::get('/posts', [PostController::class, 'index']);
